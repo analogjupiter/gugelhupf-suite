@@ -1,0 +1,59 @@
+{
+	"name": "gugelhupf",
+	"description": "Gugelhupf Multimedia Software Suite",
+
+	"copyright": "Copyright © 2024 Elias Batek",
+	"license": "GPL-2.0-or-later",
+
+	"authors": [
+		"Elias Batek"
+	],
+
+	"subPackages": [
+		{
+			"name": "scheidlworks",
+			"description": "Animation Software",
+
+			"copyright": "Copyright © 2024 Elias Batek",
+			"license": "GPL-2.0-or-later",
+
+			"importPaths": ["scheidlworks/src"],
+			"sourcePaths": ["scheidlworks/src"],
+
+			"targetPath": "bin",
+			"targetName": "schdlwrks",
+
+			"dependencies": {
+				"gugelhupf:libfarbkuebelkampagne": "*"
+			}
+		},
+		{
+			"name": "libfarbkuebelkampagne",
+			"description": "Software-rendered drawing library",
+
+			"copyright": "Copyright © 2024 Elias Batek",
+			"license": "BSL-1.0",
+
+			"importPaths": ["farbkuebelkampagne/src"],
+			"sourcePaths": ["farbkuebelkampagne/src"],
+
+			"targetPath": "bin",
+			"targetName": "farbkuebelkampagne",
+
+			"dependencies": {
+				"arsd-official:pixmappresenter": "~>11.4"
+			}
+		}
+	],
+
+	"importPaths": ["app"],
+	"sourcePaths": ["app"],
+
+	"targetPath": "bin",
+	"targetName": "gugelhupf",
+
+	"dependencies": {
+		":libfarbkuebelkampagne": "*",
+		":scheidlworks": "*"
+	}
+}
